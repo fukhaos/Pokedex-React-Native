@@ -1,0 +1,20 @@
+{
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "js-import.root": "/src",
+  "js-import.alias": {
+    "app/components": "/src/components",
+    "app/styles": "/src/styles",
+    "app/screens": "/src/screens",
+    "app/images": "/src/images",
+    "app/configs": "/src/configs",
+    "app/hooks": "/src/hooks",
+    "app/i18n": "/src/i18n",
+    "app/lotties": "/src/lotties",
+    "app/services": "/src/services",
+    "app/theme": "/src/theme",
+    "app/store": "/src/store",
+    "app/routes": "/src/routes",
+    "app/utils": "/src/utils"
+  } // to automatic linking
+}
