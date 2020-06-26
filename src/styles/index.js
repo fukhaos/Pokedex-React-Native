@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
+import colors from './colors';
 
 export const Screen = styled.View`
-  background: #fff;
+  background-color: ${colors.backgroundWhite};
   flex: 1;
 `;
 export const ImageScreen = styled.Image`
@@ -56,7 +57,8 @@ export const BaseRow = styled.View`
 export const BaseRowFade = styled.View`
   padding: 20px;
   height: 115px;
-  background: #d4d4d460;
+
+  background: ${colors.fade};
   border-radius: 10px;
 `;
 
@@ -69,7 +71,7 @@ export const Search = styled.View`
   margin-top: 25px;
   margin-bottom: 15px;
   align-items: center;
-  background: #f2f2f2;
+  background: ${colors.backgroundDefaultInput};
   border-radius: 10px;
 `;
 
@@ -81,7 +83,7 @@ export const Title = styled.Text`
   font-weight: bold;
   font-size: 32px;
   line-height: 38px;
-  color: #17171b;
+  color: ${colors.textBlack};
 `;
 
 export const PokeNumber = styled.Text`
@@ -89,7 +91,7 @@ export const PokeNumber = styled.Text`
   font-weight: bold;
   font-size: 12px;
   line-height: 14px;
-  color: rgba(23, 23, 27, 0.6);
+  color: ${colors.textNumber};
 `;
 
 export const Badges = styled.View`
@@ -109,7 +111,7 @@ export const PokeName = styled.Text`
   font-weight: bold;
   font-size: 26px;
   line-height: 31px;
-  color: #ffffff;
+  color: ${colors.white};
   text-transform: capitalize;
 `;
 
@@ -117,5 +119,5 @@ export const Description = styled.Text`
   font-size: 16px;
   line-height: 19px;
   margin-top: 10px;
-  color: #747476;
+  color: ${colors.textGray};
 `;

@@ -16,78 +16,79 @@ import Psychic from 'app/images/badges/Psychic.png';
 import Rock from 'app/images/badges/Rock.png';
 import Steel from 'app/images/badges/Steel.png';
 import Water from 'app/images/badges/Water.png';
+import colors from 'app/styles/colors';
 
 const PokemonTypes = {
   bug: {
-    color: '#8CB330',
+    color: colors.typeBug,
     badge: Bug,
   },
   dark: {
-    color: '#58575F',
+    color: colors.typeDark,
     badge: Dark,
   },
   dragon: {
-    color: '#0F6AC0',
+    color: colors.typeDragon,
     badge: Dragon,
   },
   electric: {
-    color: '#EED535',
+    color: colors.typeElectric,
     badge: Electric,
   },
   fairy: {
-    color: '#ED6EC7',
+    color: colors.typeFairy,
     badge: Fairy,
   },
   fighting: {
-    color: '#D04164',
+    color: colors.typeFighting,
     badge: Fighting,
   },
   fire: {
-    color: '#FD7D24',
+    color: colors.typeFire,
     badge: Fire,
   },
   flying: {
-    color: '#748FC9',
+    color: colors.typeFlying,
     badge: Flying,
   },
   ghost: {
-    color: '#556AAE',
+    color: colors.typeGhost,
     badge: Ghost,
   },
   grass: {
-    color: '#62B957',
+    color: colors.typeGrass,
     badge: Grass,
   },
   ground: {
-    color: '#DD7748',
+    color: colors.typeGround,
     badge: Ground,
   },
   ice: {
-    color: '#61CEC0',
+    color: colors.typeIce,
     badge: Ice,
   },
   normal: {
-    color: '#9DA0AA',
+    color: colors.typeNormal,
     badge: Normal,
   },
   poison: {
-    color: '#A552CC',
+    color: colors.typePoison,
     badge: Poison,
   },
   psychic: {
-    color: '#EA5D60',
+    color: colors.typePsychic,
     badge: Psychic,
   },
   rock: {
-    color: '#BAAB82',
+    color: colors.typeRock,
     badge: Rock,
   },
   steel: {
-    color: '#417D9A',
+    color: colors.typeSteel,
     badge: Steel,
   },
   water: {
-    color: '#4A90DA',
+    color: colors.typeWater,
     badge: Water,
   },
 };
