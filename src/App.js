@@ -12,10 +12,6 @@ ScreenOrientation.unlockAsync();
 import { enableScreens } from 'react-native-screens';
 enableScreens();
 
-if (__DEV__) {
-  //persistor.purge(); //for clear storage
-}
-
 export default function App() {
   return (
     <StoreProvider store={store}>

@@ -44,7 +44,6 @@ const DetailScreen = ({ navigation, route }) => {
         <TouchableScale onPress={goBack}>
           <Image source={back} />
         </TouchableScale>
-        {/* <TitlePokemon>{name}</TitlePokemon> */}
       </HeaderDetail>
 
       <ScrollViewDetail contentContainerStyle={styles.contentContainerStyle}>

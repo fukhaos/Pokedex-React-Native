@@ -12,8 +12,9 @@ import sort from 'app/images/sort.png';
 import SortSheet from 'app/components/SortSheet';
 import { SortOrder } from 'app/configs/constants';
 
+const ITEM_HEIGHT = 120;
+
 const HomeScreen = ({ navigation }) => {
-  const ITEM_HEIGHT = 120;
   const dispatch = useDispatch();
   const { pokemons, loading, end, sortOrder } = useSelector((state) => state.pokemon);
   const refRBSheet = useRef();
