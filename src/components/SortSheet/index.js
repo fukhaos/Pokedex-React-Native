@@ -5,6 +5,7 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import ButtonSelect from '../ButtonSelect';
 import { useDispatch, useSelector } from 'react-redux';
 import * as PokemonAction from 'app/store/modules/pokemon/actions';
+import { delay } from 'app/utils';
 
 const SortSheet = ({ refInside }) => {
   const dispatch = useDispatch();
@@ -18,9 +19,10 @@ const SortSheet = ({ refInside }) => {
 
         {options.map((item, index) => (
           <ButtonSelect
-            onPress={() => {
-              //refInside.current.close();
+            onPress={async () => {
               dispatch(PokemonAction.updateSortOrder(index));
+              await delay(500);
+              refInside.current.close();
             }}
             selected={index === sortOrder}
             title={item}

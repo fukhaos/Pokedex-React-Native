@@ -6,6 +6,12 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from 'app/store';
 import FlashMessage from 'react-native-flash-message';
 
+import * as ScreenOrientation from 'expo-screen-orientation';
+ScreenOrientation.unlockAsync();
+
+import { enableScreens } from 'react-native-screens';
+enableScreens();
+
 if (__DEV__) {
   //persistor.purge(); //for clear storage
 }

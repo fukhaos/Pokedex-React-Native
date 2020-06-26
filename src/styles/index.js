@@ -2,11 +2,16 @@ import styled from 'styled-components/native';
 import colors from './colors';
 
 export const Screen = styled.View`
-  background-color: ${colors.backgroundWhite};
+  background-color: ${(props) => (props.color ? `${props.color}90` : colors.backgroundWhite)};
   flex: 1;
 `;
 export const ImageScreen = styled.Image`
   height: 200px;
+  position: absolute;
+`;
+export const ImageDetailScreen = styled.Image`
+  margin-top: 100px;
+  margin-left: 30px;
   position: absolute;
 `;
 
@@ -77,6 +82,8 @@ export const Search = styled.View`
 
 export const InputSearch = styled.TextInput`
   margin-left: 12px;
+  height: 100%;
+  width: 100%;
 `;
 
 export const Title = styled.Text`
@@ -117,8 +124,19 @@ export const PokeNumber = styled.Text`
   color: ${colors.textNumber};
 `;
 
+export const PokeNumberDetail = styled(PokeNumber)`
+  font-size: 14px;
+`;
+
 export const Badges = styled.View`
   flex-direction: row;
+  margin-top: 5px;
+`;
+export const DetailContainer = styled.View`
+  align-items: center;
+  flex-direction: row;
+  padding-horizontal: 40px;
+  padding-top: 40px;
   margin-top: 5px;
 `;
 
@@ -156,9 +174,109 @@ export const PokeName = styled.Text`
   text-transform: capitalize;
 `;
 
+export const PokeNameDetail = styled(PokeName)`
+  font-size: 32px;
+`;
+
 export const Description = styled.Text`
   font-size: 16px;
   line-height: 19px;
   margin-top: 10px;
   color: ${colors.textGray};
+`;
+
+export const HeaderDetail = styled.View`
+  height: 50px;
+  z-index: 99;
+  justify-content: center;
+  padding-left: 40px;
+  position: absolute;
+`;
+
+export const ScrollViewDetail = styled.ScrollView`
+  flex: 1;
+`;
+
+export const TitlePokemon = styled.Text`
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  align-self: center;
+  margin-top: 10px;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  color: ${colors.backgroundWhite};
+`;
+
+export const Menu = styled.View`
+  height: 40px;
+  margin-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+`;
+
+export const MenuItem = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  opacity: ${(props) => (props.disabled ? 0.2 : 1)};
+  color: ${colors.backgroundWhite};
+`;
+
+export const BottomBackground = styled.View`
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: ${colors.backgroundWhite};
+  padding-horizontal: 40px;
+  padding-vertical: 30px;
+  flex: 1;
+  bottom: 0;
+`;
+
+export const BaseStats = styled.Text`
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 0px;
+  margin-bottom: 20px;
+  color: ${(props) => (props.color ? props.color : colors.textBlack)};
+`;
+
+export const Info = styled.Text`
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: 0px;
+  margin-top: 20px;
+  font-family: 'sans_serif_thin, System';
+  color: ${colors.textGray};
+`;
+
+export const StatContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+`;
+
+export const StatTitle = styled.Text`
+  width: 52px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+  color: ${colors.textBlack};
+`;
+
+export const StatValue = styled.Text`
+  min-width: 40px;
+  text-align: right;
+  font-size: 16px;
+  color: ${colors.textGray};
+`;
+
+export const StatValueBold = styled(StatValue)`
+  font-weight: bold;
+  font-size: 12px;
+  color: ${colors.textBlack};
 `;

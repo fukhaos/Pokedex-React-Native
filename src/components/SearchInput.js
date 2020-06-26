@@ -8,7 +8,10 @@ const SearchInput = () => {
   return (
     <Search>
       <Image source={searchImg} />
+
       <InputSearch
+        returnKeyType="search"
+        onSubmitEditing={() => alert(search)}
         onChangeText={setSearch}
         value={search}
         placeholder="What Pokémon are you looking for?"

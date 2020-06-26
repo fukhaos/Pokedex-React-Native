@@ -5,7 +5,6 @@ import {
   BaseRowFade,
   Dots,
   PokeDetail,
-  PokemonRow,
   PokeNumber,
   PokeName,
   Badges,
@@ -21,6 +20,8 @@ const RowPokemon = ({ item }) => {
   const { id, name, types } = item;
   const mainName = types[0]?.type?.name || 'normal';
   const mainType = PokemonTypes[mainName];
+
+  console.log('render: ' + item.id);
   return (
     <View>
       <BaseRow primary={mainType.color}>
@@ -40,7 +41,8 @@ const RowPokemon = ({ item }) => {
         <Image
           resizeMode="contain"
           style={styles.pokemon}
-          uri={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}></Image>
+          uri={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
+        />
       </BaseRow>
     </View>
   );

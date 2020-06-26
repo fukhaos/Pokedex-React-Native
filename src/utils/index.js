@@ -7,16 +7,18 @@ const flashInfo = (message) => {
     message: APP.NAME,
     icon: 'info',
     description: message ?? 'Notificação',
-    type: 'info'
+    type: 'info',
   });
 };
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const flashError = (message, title = APP.NAME) => {
   showMessage({
     message: title,
     icon: 'danger',
     description: message,
-    type: 'danger'
+    type: 'danger',
   });
 };
 
@@ -25,7 +27,7 @@ const flashSuccess = (message) => {
     message: APP.NAME,
     icon: 'success',
     description: message,
-    type: 'success'
+    type: 'success',
   });
 };
 
@@ -33,4 +35,4 @@ const showAlert = (msg) => {
   Alert.alert(APP.NAME, msg);
 };
 
-export { flashError, flashSuccess, flashInfo, showAlert };
+export { flashError, flashSuccess, flashInfo, showAlert, delay };

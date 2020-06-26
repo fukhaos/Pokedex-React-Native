@@ -12,13 +12,12 @@ import sort from 'app/images/sort.png';
 import SortSheet from 'app/components/SortSheet';
 import { SortOrder } from 'app/configs/constants';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const ITEM_HEIGHT = 120;
   const dispatch = useDispatch();
   const { pokemons, loading, end, sortOrder } = useSelector((state) => state.pokemon);
   const refRBSheet = useRef();
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState('');
 
   useEffect(() => {
     if (pokemons.length === 0) {
@@ -52,7 +51,7 @@ const HomeScreen = () => {
     }
   };
 
-  const getItemLayout = (data, index) => ({
+  const getItemLayout = (_data, index) => ({
     length: ITEM_HEIGHT,
     offset: ITEM_HEIGHT * index,
     index,
@@ -62,7 +61,12 @@ const HomeScreen = () => {
     return <Loading />;
   };
 
-  const renderItem = ({ item, index }) => <RowPokemon index={index} item={item} />;
+  const goDetail = (pokemon) => navigation.navigate('Detail', { pokemon });
+
+  const renderItem = ({ item, index }) => (
+    <RowPokemon onPress={() => goDetail(item)} index={index} item={item} />
+  );
+
   const header = () => (
     <Header>
       <IconsRow>

@@ -4,7 +4,7 @@ import { Types } from './actions';
 // Reducer
 const initialState = {
   pokemons: [],
-  sortOrder: 1,
+  sortOrder: 0,
   loading: true,
   end: false,
 };
