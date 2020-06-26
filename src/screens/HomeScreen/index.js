@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { FlatList, Button, Image } from 'react-native';
 import BaseScreen from 'app/components/BaseScreen';
 import SearchInput from 'app/components/SearchInput';
-import { Description, Header, Title, ListPokemon, Loading } from 'app/styles';
+import { Description, Header, Title, ListPokemon, Loading, IconsRow } from 'app/styles';
 import RowPokemon from 'app/components/RowPokemon';
 import { useSelector, useDispatch } from 'react-redux';
 import * as PokemonAction from 'app/store/modules/pokemon/actions';
+import IconButton from 'app/components/IconButton';
+import generation from 'app/images/generation.png';
+import filter from 'app/images/filter.png';
+import sort from 'app/images/sort.png';
 
 const HomeScreen = () => {
   const ITEM_HEIGHT = 115;
@@ -31,6 +35,11 @@ const HomeScreen = () => {
   const renderItem = ({ item, index }) => <RowPokemon index={index} item={item} />;
   const header = () => (
     <Header>
+      <IconsRow>
+        <IconButton icon={generation} disabled />
+        <IconButton icon={sort} />
+        <IconButton icon={filter} disabled />
+      </IconsRow>
       <Title>Pokédex</Title>
       <Description>Search for Pokémon by name or using the National Pokédex number.</Description>
       <SearchInput />
@@ -46,11 +55,11 @@ const HomeScreen = () => {
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.1}
         ListHeaderComponent={header}
-        getItemLayout={(data, index) => ({
-          length: ITEM_HEIGHT,
-          offset: ITEM_HEIGHT * index,
-          index,
-        })}
+        // getItemLayout={(data, index) => ({
+        //   length: ITEM_HEIGHT,
+        //   offset: ITEM_HEIGHT * index,
+        //   index,
+        // })}
       />
     </BaseScreen>
   );

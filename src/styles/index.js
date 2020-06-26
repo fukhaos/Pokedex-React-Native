@@ -40,7 +40,7 @@ export const PokeDetail = styled.Image`
 `;
 
 export const Header = styled.View`
-  padding-top: 40px;
+  padding-top: 10px;
 `;
 export const FlatListPokemon = styled.FlatList`
   flex: 1;
@@ -99,15 +99,28 @@ export const Badges = styled.View`
   margin-top: 5px;
 `;
 
+export const IconsRow = styled.View`
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 5px;
+  margin-bottom: 15px;
+`;
+
 export const Loading = styled.ActivityIndicator`
   margin-top: 10px;
   margin-bottom: 10px;
 `;
+
 export const Badge = styled.Image`
   width: 61px;
   height: 25px;
   resize-mode: contain;
   margin-right: 10px;
+`;
+
+export const Icon = styled.Image`
+  margin-right: 10px;
+  opacity: ${(props) => (props.disabled ? 0.2 : 1)};
 `;
 
 export const PokeName = styled.Text`
