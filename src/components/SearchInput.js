@@ -1,13 +1,18 @@
-import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { Image } from 'react-native';
 import { Search, InputSearch } from 'app/styles';
-import search from 'app/images/search.png';
+import searchImg from 'app/images/search.png';
 
 const SearchInput = () => {
+  const [search, setSearch] = useState('');
   return (
     <Search>
-      <Image source={search}></Image>
-      <InputSearch placeholder="What Pokémon are you looking for?" />
+      <Image source={searchImg} />
+      <InputSearch
+        onChangeText={setSearch}
+        value={search}
+        placeholder="What Pokémon are you looking for?"
+      />
     </Search>
   );
 };
