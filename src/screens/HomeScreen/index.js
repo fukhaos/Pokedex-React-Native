@@ -1,30 +1,50 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FlatList, Button, Image, View } from 'react-native';
 import BaseScreen from 'app/components/BaseScreen';
 import SearchInput from 'app/components/SearchInput';
-import { Description, Header, Title, ListPokemon, Loading, IconsRow, SubTitle } from 'app/styles';
+import { Description, Header, Title, ListPokemon, Loading, IconsRow } from 'app/styles';
 import RowPokemon from 'app/components/RowPokemon';
 import { useSelector, useDispatch } from 'react-redux';
 import * as PokemonAction from 'app/store/modules/pokemon/actions';
 import IconButton from 'app/components/IconButton';
-import RBSheet from 'react-native-raw-bottom-sheet';
 import generation from 'app/images/generation.png';
 import filter from 'app/images/filter.png';
 import sort from 'app/images/sort.png';
-import colors from 'app/styles/colors';
 import SortSheet from 'app/components/SortSheet';
+import { SortOrder } from 'app/configs/constants';
 
 const HomeScreen = () => {
   const ITEM_HEIGHT = 120;
   const dispatch = useDispatch();
-  const { pokemons, loading, end } = useSelector((state) => state.pokemon);
+  const { pokemons, loading, end, sortOrder } = useSelector((state) => state.pokemon);
   const refRBSheet = useRef();
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     if (pokemons.length === 0) {
       dispatch(PokemonAction.pokemonListRequest());
     }
   }, [dispatch, pokemons]);
+
+  useEffect(() => {
+    //sort pokemon
+    const temp = [...pokemons].sort(function (poke1, poke2) {
+      switch (sortOrder) {
+        case SortOrder.Lower:
+          return poke1.id - poke2.id;
+        case SortOrder.Highest:
+          return poke2.id - poke1.id;
+        case SortOrder.A_Z:
+          return poke2.name.localeCompare(poke1.name);
+        case SortOrder.Z_A:
+          return poke1.name.localeCompare(poke2.name);
+        default:
+          return poke1.id - poke2.id;
+      }
+    });
+
+    setData(temp);
+  }, [pokemons, sortOrder]);
 
   const handleLoadMore = () => {
     if (!end && !loading) {
@@ -59,7 +79,7 @@ const HomeScreen = () => {
     <BaseScreen>
       <ListPokemon
         keyExtractor={(item) => `poke${item.id}`}
-        data={pokemons}
+        data={data}
         renderItem={renderItem}
         ListFooterComponent={renderFooter}
         onEndReached={handleLoadMore}

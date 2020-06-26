@@ -1,6 +1,6 @@
 const APP = {
-  NAME: 'Pokedex'
-  //other configs ..
+  NAME: 'Pokedex',
+  URL_BASE: 'https://pokeapi.co/api/v2/',
 };
 
 export default APP;

@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './styles';
 import { Header, SubTitle, Description } from 'app/styles';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import ButtonSelect from '../ButtonSelect';
+import { useDispatch, useSelector } from 'react-redux';
+import * as PokemonAction from 'app/store/modules/pokemon/actions';
 
 const SortSheet = ({ refInside }) => {
-  const [selected, setSelected] = useState(0);
+  const dispatch = useDispatch();
+  const { sortOrder } = useSelector((state) => state.pokemon);
   const options = ['Smallest number first', 'Highest number first', 'A-Z', 'Z-A'];
   return (
     <RBSheet ref={refInside} closeOnDragDown={true} height={480} customStyles={styles}>
@@ -15,8 +18,11 @@ const SortSheet = ({ refInside }) => {
 
         {options.map((item, index) => (
           <ButtonSelect
-            onPress={() => setSelected(index)}
-            selected={index === selected}
+            onPress={() => {
+              //refInside.current.close();
+              dispatch(PokemonAction.updateSortOrder(index));
+            }}
+            selected={index === sortOrder}
             title={item}
             index={index}
           />
