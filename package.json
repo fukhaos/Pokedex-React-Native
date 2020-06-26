@@ -8,13 +8,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "@react-native-community/eslint-config": "^1.1.0",
     "@react-native-community/masked-view": "0.1.6",
     "@react-navigation/native": "^5.5.1",
     "@react-navigation/stack": "^5.5.1",
     "axios": "^0.19.2",
     "babel-jest": "^25.4.0",
-    "eslint": "^6.8.0",
     "expo": "^37.0.0",
     "expo-blur": "^8.1.2",
     "expo-splash-screen": "^0.2.3",
@@ -41,6 +39,8 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^1.1.0",
+    "eslint": "^6.8.0",
     "@babel/core": "~7.9.0",
     "babel-jest": "~25.2.6",
     "jest": "~25.2.6",

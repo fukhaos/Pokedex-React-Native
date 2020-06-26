@@ -6,9 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from 'app/store';
 import FlashMessage from 'react-native-flash-message';
 
-if (__DEV__) {
-  //persistor.purge(); //for clear storage
-}
+persistor.purge(); //for clear storage
 
 export default function App() {
   return (

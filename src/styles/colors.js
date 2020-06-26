@@ -36,6 +36,7 @@ const colors = {
   backgroundTypeWater: '#58abf6',
   backgroundTypeSteel: '#4c91b2',
   backgroundWhite: '#ffffff',
+  white: '#ffffff',
   backgroundDefaultInput: '#f2f2f2',
   backgroundPressedInput: '#e2e2e2',
   backgroundModal: 'rgba(0, 0, 0, 0.25)',

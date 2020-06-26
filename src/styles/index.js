@@ -98,6 +98,11 @@ export const Badges = styled.View`
   flex-direction: row;
   margin-top: 5px;
 `;
+
+export const Loading = styled.ActivityIndicator`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
 export const Badge = styled.Image`
   width: 61px;
   height: 25px;
