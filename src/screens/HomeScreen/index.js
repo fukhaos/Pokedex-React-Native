@@ -12,7 +12,7 @@ import filter from 'app/images/filter.png';
 import sort from 'app/images/sort.png';
 
 const HomeScreen = () => {
-  const ITEM_HEIGHT = 115;
+  const ITEM_HEIGHT = 120;
   const dispatch = useDispatch();
   const { pokemons, loading, end } = useSelector((state) => state.pokemon);
 
@@ -27,6 +27,12 @@ const HomeScreen = () => {
       dispatch(PokemonAction.pokemonListRequest());
     }
   };
+
+  const getItemLayout = (data, index) => ({
+    length: ITEM_HEIGHT,
+    offset: ITEM_HEIGHT * index,
+    index,
+  });
 
   const renderFooter = () => {
     return <Loading />;
@@ -55,11 +61,7 @@ const HomeScreen = () => {
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.1}
         ListHeaderComponent={header}
-        // getItemLayout={(data, index) => ({
-        //   length: ITEM_HEIGHT,
-        //   offset: ITEM_HEIGHT * index,
-        //   index,
-        // })}
+        getItemLayout={getItemLayout}
       />
     </BaseScreen>
   );
