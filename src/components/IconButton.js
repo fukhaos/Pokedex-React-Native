@@ -5,7 +5,7 @@ import { Icon } from 'app/styles';
 
 const IconButton = ({ icon, onPress, disabled }) => {
   return (
-    <TouchableOpacity disabled={disabled}>
+    <TouchableOpacity onPress={onPress} disabled={disabled}>
       <Icon disabled={disabled} source={icon} />
     </TouchableOpacity>
   );

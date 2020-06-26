@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { FlatList, Button, Image } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { FlatList, Button, Image, View } from 'react-native';
 import BaseScreen from 'app/components/BaseScreen';
 import SearchInput from 'app/components/SearchInput';
-import { Description, Header, Title, ListPokemon, Loading, IconsRow } from 'app/styles';
+import { Description, Header, Title, ListPokemon, Loading, IconsRow, SubTitle } from 'app/styles';
 import RowPokemon from 'app/components/RowPokemon';
 import { useSelector, useDispatch } from 'react-redux';
 import * as PokemonAction from 'app/store/modules/pokemon/actions';
 import IconButton from 'app/components/IconButton';
+import RBSheet from 'react-native-raw-bottom-sheet';
 import generation from 'app/images/generation.png';
 import filter from 'app/images/filter.png';
 import sort from 'app/images/sort.png';
+import colors from 'app/styles/colors';
+import SortSheet from 'app/components/SortSheet';
 
 const HomeScreen = () => {
   const ITEM_HEIGHT = 120;
   const dispatch = useDispatch();
   const { pokemons, loading, end } = useSelector((state) => state.pokemon);
+  const refRBSheet = useRef();
 
   useEffect(() => {
     if (pokemons.length === 0) {
@@ -43,7 +47,7 @@ const HomeScreen = () => {
     <Header>
       <IconsRow>
         <IconButton icon={generation} disabled />
-        <IconButton icon={sort} />
+        <IconButton icon={sort} onPress={() => refRBSheet.current.open()} />
         <IconButton icon={filter} disabled />
       </IconsRow>
       <Title>Pokédex</Title>
@@ -63,6 +67,7 @@ const HomeScreen = () => {
         ListHeaderComponent={header}
         getItemLayout={getItemLayout}
       />
+      <SortSheet refInside={refRBSheet} />
     </BaseScreen>
   );
 };

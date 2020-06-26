@@ -86,6 +86,29 @@ export const Title = styled.Text`
   color: ${colors.textBlack};
 `;
 
+export const Background = styled.TouchableOpacity`
+  height: 60px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: ${(props) =>
+    props.selected ? colors.typePsychic : colors.backgroundDefaultInput};
+`;
+
+export const Label = styled.Text`
+  font-size: 16px;
+  color: ${(props) => (props.selected ? colors.backgroundWhite : colors.textGray)};
+`;
+
+export const SubTitle = styled.Text`
+  font-size: 26px;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 0px;
+  color: ${colors.textBlack};
+`;
+
 export const PokeNumber = styled.Text`
   font-style: normal;
   font-weight: bold;
