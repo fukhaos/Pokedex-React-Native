@@ -4401,10 +4401,10 @@ immediate@^3.2.2:
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.3.0.tgz#1aef225517836bcdf7f2a2de2600c79ff0269266"
   integrity sha512-HR7EVodfFUdQCTIeySw+WDRFJlPcLOJbXfwwZ7Oom6tjsvZ3bOkCDJHehQC3nxJrv7+f9XecwazynjU8e4Vw3Q==
 
-immer@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-7.0.4.tgz#f5d41ee61830f1620ac7f168b3b57078f0200d1a"
-  integrity sha512-HSBBQVdsJp6Bce6ggxwZiqWwPWMHvPCn3ZHzVgKZOAx7Ikr7U8s4x+Wgr5y5xyn3ZggWJYeWGnOEP3Z4g+r7RQ==
+immer@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
+  integrity sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==
 
 import-fresh@^2.0.0:
   version "2.0.0"
